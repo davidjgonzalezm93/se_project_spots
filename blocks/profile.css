@@ -113,6 +113,7 @@ opacity: 0.8;
       font-size: 20px;
       margin: 0 0 6px;
       max-width: 288px;
+      line-height: 1;
   }
 
   .profile__description {
