@@ -3,6 +3,7 @@
 ### Overview  
 
 * Semantic HTML5
+* Css
 * Flexbox
 * Positioning
 * Flat BEM file structure
@@ -22,3 +23,7 @@ This project is made so all the elements are displayed correctly on popular scre
   
 Video Demo
 Watch the demo of the project (https://drive.google.com/file/d/1N1suBowjN_DlHw-K3YvRJHF-svGb_qlS/view?usp=sharing).
+ 
+**Deployment**
+
+Deployment link: https://davidjgonzalezm93.github.io/se_project_spots/
