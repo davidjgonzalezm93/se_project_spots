@@ -30,16 +30,16 @@
 
 .card__like-btn {
   background-image: url(../images/heart.svg);
-  width: 23px;
-  height: 20px;
-  border: none;
-  background-color: transparent;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 40%;
-  cursor: pointer;
-  transition: background-color 0.5s;
+    width: 23px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 40%;
+    cursor: pointer;
+    transition: background-color 0.5s;
 
 }
 
