@@ -38,55 +38,15 @@
       </section>
       <section class="cards page__section">
         <ul class="cards__list">
-          <template id="card-template"></template>
-          <li class="card">
-            <img src="images/Card.png" alt="Val Thorens" class="card__image" />
-            <div class="card__content">
-              <h2 class="card__title">Val Thorens</h2>
-              <button type="button" class="card__like-btn"></button>
-
-            </div>
-          </li>
-          <li class="card">
-            <img src="images/restaurantterrace.jpg" alt="Restaurant terrace" class="card__image" />
-            <div class="card__content">
-              <h2 class="card__title">Restaurant terrace</h2>
-              <button type="button" class="card__like-btn"></button>
-
-            </div>
-          </li>
-          <li class="card">
-            <img src="images/outdoorcafe.jpg" alt="An outdoor cafe" class="card__image" />
-            <div class="card__content">
-              <h2 class="card__title">An outdoor cafe</h2>
-              <button type="button" class="card__like-btn"></button>
-
-            </div>
-          </li>
-          <li class="card">
-            <img src="images/brigde.jpg" alt="A very long bridge, over the forest" class="card__image" />
-            <div class="card__content">
-              <h2 class="card__title">A very long bridge, over the forest</h2>
-              <button type="button" class="card__like-btn"></button>
-
-            </div>
-          </li>
-          <li class="card">
-            <img src="images/tunnel.jpg" alt="Tunnel with morning light" class="card__image" />
-            <div class="card__content">
-              <h2 class="card__title">Tunnel with morning light</h2>
-              <button type="button" class="card__like-btn"></button>
-
-            </div>
-          </li>
-          <li class="card">
-            <img src="images/mountainhouse.png" alt="Mountain house" class="card__image" />
-            <div class="card__content">
-              <h2 class="card__title">Mountain house</h2>
-              <button type="button" class="card__like-btn"></button>
-
-            </div>
-          </li>
+          <template id="card-template">
+            <li class="card">
+              <img class="card__image" />
+              <div class="card__content">
+                <h2 class="card__title"></h2>
+                <button aria-label="Like-card" class="card__like-btn" type="button"></button>
+              </div>
+            </li>
+          </template>
         </ul>
       </section>
     </main>
