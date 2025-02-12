@@ -31,10 +31,10 @@
           <button type="button" class="profile__edit-btn">
             <img src="images/pencil.svg" alt="pencil icon" />Edit Profile
           </button>
+          <button type="button" class="profile__add-btn">
+            <img src="images/plus.svg" alt="plus icon" />New Post
+          </button>
         </div>
-        <button type="button" class="profile__add-btn">
-          <img src="images/plus.svg" alt="plus icon" />New Post
-        </button>
       </section>
       <section class="cards page__section">
         <ul class="cards__list">
@@ -55,7 +55,7 @@
     </footer>
     <div class="modal " id="edit-modal">
       <div class="modal__container">
-        <button type="submit" class="modal__close-btn">
+        <button type="button" class="modal__close-btn"> <!-- Changed to type="button" to prevent form submission -->
           <img src="./images/close.svg" alt="close-icon" class="modal__close icon">
         </button>
         <h2 class="modal__title">Edit Profile</h2>
@@ -68,7 +68,7 @@
             Description
             <input id="profile-description-input" type="text" class="modal__input" placeholder="Describe yourself">
           </label>
-          <button type="submit" class="modal__submit-btn">Save</button>
+          <button type="submit" class="modal__submit-btn">Save</button> <!-- Keeps type="submit" for saving -->
         </form>
       </div>
     </div>
@@ -77,4 +77,3 @@
 </body>
 
 </html>
-</div>
