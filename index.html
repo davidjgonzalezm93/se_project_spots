@@ -8,11 +8,11 @@
   <meta name="author" content="David Gonzalez" />
   <meta name="keywords" content="HTML, CSS, !!" />
   <link rel="stylesheet" href="./pages/index.css" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com/" />
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,400;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,400;1,400&display=swap"
     rel="stylesheet" />
   <title>Spots</title>
 </head>
@@ -29,20 +29,20 @@
           <h1 class="profile__name">Bessie Coleman</h1>
           <p class="profile__description">Civil Aviator</p>
           <button type="button" class="profile__edit-button">
-            <img class="profile__edit-icon" src="./images/pencil.svg.svg" alt="Pen icon" />Edit Profile
+            <img class="profile__edit-icon" src="./images/pencil.svg" alt="Pen icon" />Edit Profile
           </button>
         </div>
         <button type="button" class="profile__post-button">
-          <img src="./images/plus.svg" alt="add post button" class="profile__post-button-image" />
+          <img src="./images/plus.svg" alt="Add post button" class="profile__post-button-image" />
           <span class="profile__post-button-text">New Post</span>
         </button>
-
 
         <div class="modal" id="edit-profile-modal">
           <div class="modal__container">
             <div class="modal__header">
               <h2 class="modal__title">Edit Profile</h2>
               <button class="modal__button-close">
+                <img src="./images/close.svg" alt="Close">
               </button>
             </div>
             <form class="modal__form">
@@ -51,17 +51,17 @@
               <label for="modal__input-description" class="modal__label">Description</label>
               <input type="text" id="modal__input-description" name="Description" class="modal__input"
                 placeholder="Describe yourself" />
-              <button class="modal__button-save">Save</button>
+              <button type="submit" class="modal__button-save">Save</button>
             </form>
           </div>
         </div>
-
 
         <div class="modal" id="new-post-modal">
           <div class="modal__container">
             <div class="modal__header">
               <h2 class="modal__title">New Post</h2>
               <button class="modal__button-close">
+                <img src="./images/close.svg" alt="Close">
               </button>
             </div>
             <form class="modal__form">
@@ -79,15 +79,16 @@
 
       <section class="cards page__section">
         <ul class="cards__list">
-
           <template id="cardTemplate">
             <li class="card">
               <button class="card__delete" type="button">
+                <img src="./images/deleteGray.svg" alt="Delete">
               </button>
               <img src="" alt="" class="card__image" />
               <div class="card__caption">
                 <h2 class="card__text"></h2>
                 <button type="button" class="card__like">
+                  <img src="./images/heart.svg" alt="Like">
                 </button>
               </div>
             </li>
@@ -95,10 +96,10 @@
         </ul>
       </section>
 
-
       <div class="modal" id="preview-modal">
         <div class="modal__content">
           <button class="modal__button-close modal__button-close-preview">
+            <img src="./images/whiteclose.svg" alt="Close">
           </button>
           <img src="#" alt="" class="modal__image" />
           <p class="modal__caption">Bridge with fog</p>
@@ -112,7 +113,6 @@
       </p>
     </footer>
   </div>
-
   <script defer src="scripts/index.js"></script>
 </body>
 
