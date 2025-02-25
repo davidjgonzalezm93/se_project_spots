@@ -41,7 +41,7 @@
 .modal__button-close {
   background-color: #fff;
   background-size: 35px 35px;
-  background: transparent url("//images/close.svg") center no-repeat;
+  background: transparent url("/images/close.svg") center no-repeat;
   border: none;
   cursor: pointer;
   opacity: .4;
@@ -57,7 +57,7 @@
 }
 
 .modal__button-close-preview {
-  background: transparent url("//images/whiteclose.svg") center no-repeat;
+  background: transparent url("/images/whiteclose.svg") center no-repeat;
   height: 40px;
   width: 40px;
   position: absolute;
