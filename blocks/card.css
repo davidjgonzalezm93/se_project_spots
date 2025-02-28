@@ -19,14 +19,14 @@
   right: 10px;
   height: 32px;
   width: 32px;
-  background: url("/images/deleteGray.svg");
+  background: url(../images/deleteGray.svg);
   z-index: 1;
   border: none;
   cursor: pointer;
 }
 
 .card__delete:hover {
-  background: url("/images/deleteRed.svg");
+  background: url(../images/deleteRed.svg);
 }
 
 .card__caption {
@@ -42,7 +42,7 @@
 .card__text {
   font-size: 20px;
   line-height: 24px;
-  background-color: #FCF5E5;
+  background-color: #fcf5e5;
   margin: 0;
   color: #212121;
   text-overflow: ellipsis;
@@ -52,23 +52,23 @@
 }
 
 .card__like {
-  opacity: .40;
+  opacity: 0.4;
   height: 20px;
   width: 23px;
   border-style: none;
   cursor: pointer;
-  background: transparent url("/images/heart.svg") center no-repeat;
+  background: transparent url(../images/heart.svg) center no-repeat;
   padding: 0;
   margin: 0;
 }
 
 .card__like:hover {
   opacity: 1;
-  background-color: #FCF5E5;
+  background-color: #fcf5e5;
 }
 
 .card__like_liked {
-  background: transparent url("/images/likered.svg") center no-repeat;
+  background: transparent url(../images/likered.svg) center no-repeat;
   opacity: 1;
   border-style: none;
   padding: 0;
@@ -78,17 +78,17 @@
 }
 
 .card__like_liked:hover {
-  background: url("/images/opacityred.svg");
+  background: url(../images/opacityred.svg);
   opacity: 1;
 }
 
 @media screen and (max-width: 520px) {
   .card__image {
-      max-height: 288px;
-      max-width: 288px;
+    max-height: 288px;
+    max-width: 288px;
   }
 
   .card__text {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
