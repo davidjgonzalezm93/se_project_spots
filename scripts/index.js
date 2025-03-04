@@ -25,7 +25,7 @@ const initialCards = [
   },
 ];
 
-// Fix class name mismatches
+
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const nameInput = document.querySelector("#modal__input-name");
@@ -36,7 +36,7 @@ const profileDescriptionElement = document.querySelector(".profile__description"
 
 const closeProfileModal = document.querySelector("#edit-profile-modal .modal__button-close");
 
-// Fix class name mismatch for add post button
+
 const profilePostButton = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const linkInput = document.querySelector("#modal__input-link");
@@ -44,7 +44,7 @@ const captionInput = document.querySelector("#modal__input-caption");
 const postFormElement = document.querySelector("#new-post-modal .modal__form");
 const closePostModal = document.querySelector("#new-post-modal .modal__button-close");
 
-// Fix missing cards list declaration before usage
+
 const cardTemplate = document.querySelector("#cardTemplate");
 const cardsList = document.querySelector(".cards__list");
 
@@ -61,19 +61,19 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
-// Open profile edit modal
+
 profileEditButton.addEventListener("click", () => {
   openModal(editProfileModal);
   nameInput.value = profileNameElement.textContent;
   jobInput.value = profileDescriptionElement.textContent;
 });
 
-// Close profile edit modal
+
 closeProfileModal.addEventListener("click", () => {
   closeModal(editProfileModal);
 });
 
-// Save profile edits
+
 editFormElement.addEventListener("submit", (evt) => {
   evt.preventDefault();
   profileNameElement.textContent = nameInput.value;
@@ -81,17 +81,17 @@ editFormElement.addEventListener("submit", (evt) => {
   closeModal(editProfileModal);
 });
 
-// Open new post modal
+
 profilePostButton.addEventListener("click", () => {
   openModal(newPostModal);
 });
 
-// Close new post modal
+
 closePostModal.addEventListener("click", () => {
   closeModal(newPostModal);
 });
 
-// Handle new post submission
+
 postFormElement.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const inputValues = { name: captionInput.value, link: linkInput.value };
@@ -130,12 +130,12 @@ function getCardElement(data) {
   return cardElement;
 }
 
-// Close preview modal
+
 closePreviewModal.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
-// Initialize default cards
+
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.prepend(cardElement);
