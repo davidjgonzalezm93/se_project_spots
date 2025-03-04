@@ -1,3 +1,4 @@
+
 .modal {
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.4);
@@ -19,11 +20,13 @@
   opacity: 1;
 }
 
+
 .modal__container {
   position: fixed;
   background-color: #fff;
   border-radius: 8px;
 }
+
 
 .modal__header {
   display: flex;
@@ -38,14 +41,12 @@
   margin: 0;
 }
 
+
 .modal__button-close {
-  background-color: #fff;
-  background-size: 35px 35px;
   background: transparent url(../images/close.svg) center no-repeat;
   border: none;
   cursor: pointer;
   opacity: 0.4;
-  border: none;
   box-sizing: border-box;
   width: 40px;
   height: 40px;
@@ -74,6 +75,7 @@
   opacity: 0.4;
 }
 
+
 .modal__form {
   display: flex;
   flex-direction: column;
@@ -88,6 +90,7 @@
   opacity: 0.7;
   margin-bottom: 8px;
   margin-top: 32px;
+  text-align: left;
 }
 
 .modal__input {
@@ -96,18 +99,18 @@
   color: #212121;
   padding: 16px 12px;
   border-radius: 8px;
-  border-width: 1px;
-  border-color: rgb(33, 33, 33, 0.4);
+  border: 1px solid rgba(33, 33, 33, 0.4);
   cursor: pointer;
 }
 
 .modal__input:hover {
-  border-color: rgb(33, 33, 33, 0.8);
+  border-color: rgba(33, 33, 33, 0.8);
 }
 
 .modal__input-name {
   margin-bottom: 32px;
 }
+
 
 .modal__button-save {
   padding: 18px 58px;
@@ -117,15 +120,18 @@
   border-radius: 8px;
   align-self: start;
   cursor: pointer;
+  border: none;
 }
 
 .modal__button-save:hover {
   opacity: 0.8;
 }
 
+
 .modal__content {
   position: relative;
 }
+
 
 .modal__caption {
   color: #fff;
@@ -138,6 +144,7 @@
   position: absolute;
 }
 
+
 .modal__image {
   max-width: 80vw;
   max-height: 80vh;
@@ -146,6 +153,7 @@
   padding: 0;
   object-fit: cover;
 }
+
 
 @media screen and (max-width: 320px) {
   .modal__container {
@@ -191,6 +199,7 @@
     padding: 18px 118px;
     max-width: 276px;
     max-height: 52px;
+    border: none;
   }
 
   .modal__content {

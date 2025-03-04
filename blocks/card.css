@@ -27,7 +27,6 @@
 
 .card__delete:hover {
   background: url('../images/deleteRed.svg') center no-repeat;
-
 }
 
 .card__caption {

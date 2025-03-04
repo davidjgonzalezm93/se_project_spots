@@ -25,7 +25,6 @@ const initialCards = [
   },
 ];
 
-
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const nameInput = document.querySelector("#modal__input-name");
@@ -36,14 +35,12 @@ const profileDescriptionElement = document.querySelector(".profile__description"
 
 const closeProfileModal = document.querySelector("#edit-profile-modal .modal__button-close");
 
-
 const profilePostButton = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const linkInput = document.querySelector("#modal__input-link");
 const captionInput = document.querySelector("#modal__input-caption");
 const postFormElement = document.querySelector("#new-post-modal .modal__form");
 const closePostModal = document.querySelector("#new-post-modal .modal__button-close");
-
 
 const cardTemplate = document.querySelector("#cardTemplate");
 const cardsList = document.querySelector(".cards__list");
@@ -61,18 +58,15 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
-
 profileEditButton.addEventListener("click", () => {
   openModal(editProfileModal);
   nameInput.value = profileNameElement.textContent;
   jobInput.value = profileDescriptionElement.textContent;
 });
 
-
 closeProfileModal.addEventListener("click", () => {
   closeModal(editProfileModal);
 });
-
 
 editFormElement.addEventListener("submit", (evt) => {
   evt.preventDefault();
@@ -81,16 +75,13 @@ editFormElement.addEventListener("submit", (evt) => {
   closeModal(editProfileModal);
 });
 
-
 profilePostButton.addEventListener("click", () => {
   openModal(newPostModal);
 });
 
-
 closePostModal.addEventListener("click", () => {
   closeModal(newPostModal);
 });
-
 
 postFormElement.addEventListener("submit", (evt) => {
   evt.preventDefault();
@@ -116,9 +107,13 @@ function getCardElement(data) {
   });
 
   const deleteButton = cardElement.querySelector(".card__delete");
-  deleteButton.addEventListener("click", () => {
+
+  deleteButton.removeEventListener("click", deleteCard);
+  deleteButton.addEventListener("click", deleteCard);
+
+  function deleteCard() {
     cardElement.remove();
-  });
+  }
 
   cardImage.addEventListener("click", () => {
     openModal(previewModal);
@@ -130,11 +125,9 @@ function getCardElement(data) {
   return cardElement;
 }
 
-
 closePreviewModal.addEventListener("click", () => {
   closeModal(previewModal);
 });
-
 
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
