@@ -52,10 +52,21 @@ const closePreviewModal = previewModal.querySelector(".modal__button-close-previ
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscKey);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscKey);
+}
+
+function handleEscKey(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
 }
 
 function handleProfileEditButtonClick() {
@@ -78,6 +89,10 @@ function handleProfilePostButtonClick() {
 function handlePostFormSubmit(evt) {
   evt.preventDefault();
   const inputValues = { name: captionInput.value, link: linkInput.value };
+  if (!inputValues.name || !inputValues.link) {
+    alert("Please fill in all fields.");
+    return;
+  }
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   postFormElement.reset();
