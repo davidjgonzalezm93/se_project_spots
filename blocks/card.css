@@ -19,14 +19,19 @@
   right: 10px;
   height: 32px;
   width: 32px;
-  background: url('../images/deleteGray.svg') center no-repeat;
+  background: none;
   z-index: 1;
   border: none;
   cursor: pointer;
 }
 
-.card__delete:hover {
-  background: url('../images/deleteRed.svg') center no-repeat;
+.card__delete img {
+  width: 32px;
+  height: 32px;
+}
+
+.card__delete:hover img {
+  content: url(../images/deleteRed.svg);
 }
 
 .card__caption {
@@ -57,7 +62,7 @@
   width: 23px;
   border-style: none;
   cursor: pointer;
-  background: url('../images/heart.svg') center no-repeat transparent;
+  background: transparent url("/images/heart.svg") center no-repeat;
   padding: 0;
   margin: 0;
 }
@@ -68,7 +73,7 @@
 }
 
 .card__like_liked {
-  background: url('../images/likered.svg') center no-repeat transparent;
+  background: transparent url(../images/likered.svg);
   opacity: 1;
   border-style: none;
   padding: 0;
@@ -78,7 +83,7 @@
 }
 
 .card__like_liked:hover {
-  background: url(../images/opacityred.svg) center no-repeat transparent;
+  background: url(../images/opacityred.svg);
   opacity: 1;
 }
 
