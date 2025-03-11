@@ -56,8 +56,21 @@ function openModal(modal) {
   modal.addEventListener("mousedown", (evt) => {
     if (evt.target === modal) {
       closeModal(modal);
-}
+    }
   });
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscKey);
+  
+  // Reset image src for preview modal to prevent image caching issues
+  if (modal === previewModal) {
+    // Wait for the transition to complete before resetting src
+    setTimeout(() => {
+      modalImage.src = "#";
+    }, 300);
+  }
 }
 
 function handleEscKey(evt) {
