@@ -53,11 +53,11 @@ const closePreviewModal = previewModal.querySelector(".modal__button-close-previ
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscKey);
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
 }
-
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", handleEscKey);
+  });
 }
 
 function handleEscKey(evt) {
