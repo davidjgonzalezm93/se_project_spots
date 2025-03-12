@@ -29,18 +29,26 @@ const profileEditButton = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const nameInput = document.querySelector("#modal__input-name");
 const jobInput = document.querySelector("#modal__input-description");
-const editFormElement = document.querySelector("#edit-profile-modal .modal__form");
+const editFormElement = document.querySelector(
+  "#edit-profile-modal .modal__form"
+);
 const profileNameElement = document.querySelector(".profile__name");
-const profileDescriptionElement = document.querySelector(".profile__description");
+const profileDescriptionElement = document.querySelector(
+  ".profile__description"
+);
 
-const closeProfileModal = document.querySelector("#edit-profile-modal .modal__button-close");
+const closeProfileModal = document.querySelector(
+  "#edit-profile-modal .modal__button-close"
+);
 
 const profilePostButton = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const linkInput = document.querySelector("#modal__input-link");
 const captionInput = document.querySelector("#modal__input-caption");
 const postFormElement = document.querySelector("#new-post-modal .modal__form");
-const closePostModal = document.querySelector("#new-post-modal .modal__button-close");
+const closePostModal = document.querySelector(
+  "#new-post-modal .modal__button-close"
+);
 
 const cardTemplate = document.querySelector("#cardTemplate");
 const cardsList = document.querySelector(".cards__list");
@@ -48,7 +56,9 @@ const cardsList = document.querySelector(".cards__list");
 const previewModal = document.querySelector("#preview-modal");
 const modalImage = previewModal.querySelector(".modal__image");
 const modalCaption = previewModal.querySelector(".modal__caption");
-const closePreviewModal = previewModal.querySelector(".modal__button-close-preview");
+const closePreviewModal = previewModal.querySelector(
+  ".modal__button-close-preview"
+);
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -63,10 +73,8 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscKey);
-  
-  // Reset image src for preview modal to prevent image caching issues
+
   if (modal === previewModal) {
-    // Wait for the transition to complete before resetting src
     setTimeout(() => {
       modalImage.src = "#";
     }, 300);
@@ -143,7 +151,9 @@ initialCards.forEach((item) => {
 });
 
 function getCardElement(data) {
-  const cardElement = cardTemplate.content.cloneNode(true).querySelector(".card");
+  const cardElement = cardTemplate.content
+    .cloneNode(true)
+    .querySelector(".card");
 
   const cardText = cardElement.querySelector(".card__text");
   const cardImage = cardElement.querySelector(".card__image");
