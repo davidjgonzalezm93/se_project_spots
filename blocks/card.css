@@ -19,19 +19,14 @@
   right: 10px;
   height: 32px;
   width: 32px;
-  background: none;
+  background: url(../images/deleteGray.svg) no-repeat center;
   z-index: 1;
   border: none;
   cursor: pointer;
 }
 
-.card__delete img {
-  width: 32px;
-  height: 32px;
-}
-
-.card__delete:hover img {
-  content: url(../images/deleteRed.svg);
+.card__delete:hover {
+  background: url(../images/deleteRed.svg) no-repeat center;
 }
 
 .card__caption {
@@ -80,6 +75,9 @@
   margin: 0;
   height: 20px;
   width: 23px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card__like_liked:hover {

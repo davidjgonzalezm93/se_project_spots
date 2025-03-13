@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="!!!" />
+  <meta name="description" content="A website showcasing various spots with images and descriptions." />
   <meta name="author" content="David Gonzalez" />
-  <meta name="keywords" content="HTML, CSS, !!" />
+  <meta name="keywords" content="HTML, CSS, JavaScript, Spots, Images" />
   <link rel="stylesheet" href="./pages/index.css" />
   <link rel="stylesheet" href="./blocks/modal.css" />
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
@@ -30,52 +30,54 @@
           <h1 class="profile__name">Bessie Coleman</h1>
           <p class="profile__description">Civil Aviator</p>
           <button type="button" class="profile__edit-btn">
-            <img class="profile__edit-icon" src="./images/pencil.svg" alt="pencil icon" />Edit Profile
+            <img class="profile__edit-icon" src="./images/pencil.svg" alt="Edit profile icon" />Edit Profile
           </button>
         </div>
         <button type="button" class="profile__add-btn">
-          <img src="./images/plus.svg" alt="plus icon" class="profile__post-button-image" />
+          <img src="./images/plus.svg" alt="Add new post icon" class="profile__post-button-image" />
           <span class="profile__post-button-text">New Post</span>
         </button>
 
-        <div class="modal" id="edit-profile-modal">
+        <div class="modal" id="edit-profile-modal" aria-labelledby="edit-profile-title" role="dialog">
           <div class="modal__container">
             <div class="modal__header">
-              <h2 class="modal__title">Edit Profile</h2>
-              <button type="button" class="modal__button-close">
-                <img src="./images/close.svg" alt="close">
+              <h2 class="modal__title" id="edit-profile-title">Edit Profile</h2>
+              <button type="button" class="modal__button-close" aria-label="Close modal">
+                <img src="./images/close.svg" alt="Close modal icon">
               </button>
             </div>
             <form class="modal__form">
               <label for="modal__input-name" class="modal__label">Name</label>
-              <input type="text" id="modal__input-name" name="Name" class="modal__input" placeholder="Type your name" />
+              <input type="text" id="modal__input-name" name="Name" class="modal__input" placeholder="Type your name"
+                required />
               <label for="modal__input-description" class="modal__label">Description</label>
               <input type="text" id="modal__input-description" name="Description" class="modal__input"
-                placeholder="Describe yourself" />
+                placeholder="Describe yourself" required />
               <button type="submit" class="modal__button-save">Save</button>
             </form>
           </div>
         </div>
 
-        <div class="modal" id="new-post-modal">
+        <div class="modal" id="new-post-modal" aria-labelledby="new-post-title" role="dialog">
           <div class="modal__container">
             <div class="modal__header">
-              <h2 class="modal__title">New Post</h2>
-              <button class="modal__button-close">
-                <img src="./images/close.svg" alt="close">
+              <h2 class="modal__title" id="new-post-title">New Post</h2>
+              <button type="button" class="modal__button-close" aria-label="Close modal">
+                <img src="./images/close.svg" alt="Close modal icon">
               </button>
             </div>
             <form class="modal__form">
               <label for="modal__input-link" class="modal__label">Image link</label>
               <input type="url" id="modal__input-link" name="Link" class="modal__input"
-                placeholder="Paste a link to the picture" />
+                placeholder="Paste a link to the picture" required pattern="https?://.+" />
               <label for="modal__input-caption" class="modal__label">Caption</label>
               <input type="text" id="modal__input-caption" name="Caption" class="modal__input"
-                placeholder="Type your caption" />
-              <button class="modal__button-save">Save</button>
+                placeholder="Type your caption" required />
+              <button type="submit" class="modal__button-save">Save</button>
             </form>
           </div>
         </div>
+
       </section>
 
       <section class="cards page__section">
@@ -83,13 +85,13 @@
           <template id="cardTemplate">
             <li class="card">
               <button class="card__delete" type="button">
-                <img src="./images/deleteGray.svg" alt="delete icon">
+                <img src="./images/deleteGray.svg" alt="Delete card icon">
               </button>
-              <img src="" alt="" class="card__image" />
+              <img src="" alt="Card image" class="card__image" />
               <div class="card__caption">
                 <h2 class="card__text"></h2>
                 <button type="button" class="card__like">
-                  <img src="./images/heart.svg" alt="Like">
+                  <img src="./images/heart.svg" alt="Like icon">
                 </button>
               </div>
             </li>
@@ -97,12 +99,12 @@
         </ul>
       </section>
 
-      <div class="modal" id="preview-modal">
+      <div class="modal" id="preview-modal" aria-labelledby="preview-title" role="dialog">
         <div class="modal__content">
-          <button type="button" class="modal__button-close modal__button-close-preview">
-            <img src="./images/whiteclose.svg" alt="close button">
+          <button type="button" class="modal__button-close modal__button-close-preview" aria-label="Close modal">
+            <img src="./images/whiteclose.svg" alt="Close preview modal icon">
           </button>
-          <img src="#" alt="" class="modal__image" />
+          <img src="#" alt="Preview image" class="modal__image" />
           <p class="modal__caption">Bridge with fog</p>
         </div>
       </div>
@@ -114,7 +116,7 @@
       </p>
     </footer>
   </div>
-  <script defer src="scripts/index.js"></script>
+  <script defer src="./scripts/index.js"></script>
 </body>
 
 </html>
