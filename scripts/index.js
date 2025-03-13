@@ -29,26 +29,20 @@ const profileEditButton = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const nameInput = document.querySelector("#modal__input-name");
 const jobInput = document.querySelector("#modal__input-description");
-const editFormElement = document.querySelector(
-  "#edit-profile-modal .modal__form"
-);
+const editFormElement = document.querySelector(".modal__form");
 const profileNameElement = document.querySelector(".profile__name");
 const profileDescriptionElement = document.querySelector(
   ".profile__description"
 );
 
-const closeProfileModal = document.querySelector(
-  "#edit-profile-modal .modal__button-close"
-);
+const closeProfileModal = document.querySelector(".modal__button-close");
 
 const profilePostButton = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const linkInput = document.querySelector("#modal__input-link");
 const captionInput = document.querySelector("#modal__input-caption");
 const postFormElement = document.querySelector("#new-post-modal .modal__form");
-const closePostModal = document.querySelector(
-  "#new-post-modal .modal__button-close"
-);
+const closePostModal = document.querySelector(".modal__button-close");
 
 const cardTemplate = document.querySelector("#cardTemplate");
 const cardsList = document.querySelector(".cards__list");
