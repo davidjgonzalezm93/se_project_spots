@@ -31,18 +31,13 @@ const nameInput = document.querySelector("#modal__input-name");
 const jobInput = document.querySelector("#modal__input-description");
 const editFormElement = document.querySelector(".modal__form");
 const profileNameElement = document.querySelector(".profile__name");
-const profileDescriptionElement = document.querySelector(
-  ".profile__description"
-);
-
-const closeProfileModal = document.querySelector(".modal__button-close");
+const profileDescriptionElement = document.querySelector(".profile__description");
 
 const profilePostButton = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const linkInput = document.querySelector("#modal__input-link");
 const captionInput = document.querySelector("#modal__input-caption");
 const postFormElement = document.querySelector("#new-post-modal .modal__form");
-const closePostModal = document.querySelector(".modal__button-close");
 
 const cardTemplate = document.querySelector("#cardTemplate");
 const cardsList = document.querySelector(".cards__list");
@@ -50,9 +45,17 @@ const cardsList = document.querySelector(".cards__list");
 const previewModal = document.querySelector("#preview-modal");
 const modalImage = previewModal.querySelector(".modal__image");
 const modalCaption = previewModal.querySelector(".modal__caption");
-const closePreviewModal = previewModal.querySelector(
-  ".modal__button-close-preview"
-);
+
+const closeButtons = document.querySelectorAll(".modal__button-close");
+
+closeButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const modal = button.closest(".modal");
+    if (modal) {
+      closeModal(modal);
+    }
+  });
+});
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -84,24 +87,16 @@ function handleEscKey(evt) {
   }
 }
 
-function handleProfileEditButtonClick() {
-  openModal(editProfileModal);
-  nameInput.value = profileNameElement.textContent;
-  jobInput.value = profileDescriptionElement.textContent;
-}
-
-function handleProfileFormSubmit(evt) {
+profileEditButton.addEventListener("click", () => openModal(editProfileModal));
+editFormElement.addEventListener("submit", (evt) => {
   evt.preventDefault();
   profileNameElement.textContent = nameInput.value;
   profileDescriptionElement.textContent = jobInput.value;
   closeModal(editProfileModal);
-}
+});
 
-function handleProfilePostButtonClick() {
-  openModal(newPostModal);
-}
-
-function handlePostFormSubmit(evt) {
+profilePostButton.addEventListener("click", () => openModal(newPostModal));
+postFormElement.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const inputValues = { name: captionInput.value, link: linkInput.value };
   if (!inputValues.name || !inputValues.link) {
@@ -112,9 +107,9 @@ function handlePostFormSubmit(evt) {
   cardsList.prepend(cardElement);
   postFormElement.reset();
   closeModal(newPostModal);
-}
+});
 
-function handleCardClick(event) {
+cardsList.addEventListener("click", (event) => {
   const card = event.target.closest(".card");
   if (!card) return;
 
@@ -126,18 +121,7 @@ function handleCardClick(event) {
     modalImage.alt = cardImage.alt;
     modalCaption.textContent = cardText.textContent;
   }
-}
-
-profileEditButton.addEventListener("click", handleProfileEditButtonClick);
-closeProfileModal.addEventListener("click", () => closeModal(editProfileModal));
-editFormElement.addEventListener("submit", handleProfileFormSubmit);
-
-profilePostButton.addEventListener("click", handleProfilePostButtonClick);
-closePostModal.addEventListener("click", () => closeModal(newPostModal));
-postFormElement.addEventListener("submit", handlePostFormSubmit);
-
-cardsList.addEventListener("click", handleCardClick);
-closePreviewModal.addEventListener("click", () => closeModal(previewModal));
+});
 
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
@@ -145,9 +129,7 @@ initialCards.forEach((item) => {
 });
 
 function getCardElement(data) {
-  const cardElement = cardTemplate.content
-    .cloneNode(true)
-    .querySelector(".card");
+  const cardElement = cardTemplate.content.cloneNode(true).querySelector(".card");
 
   const cardText = cardElement.querySelector(".card__text");
   const cardImage = cardElement.querySelector(".card__image");
@@ -163,10 +145,6 @@ function getCardElement(data) {
     likeButton.classList.toggle("card__like_liked");
   });
 
-  deleteButton.addEventListener("click", (event) => {
-    event.stopPropagation();
-    cardElement.remove();
-  });
 
   return cardElement;
 }
