@@ -113,7 +113,9 @@ cardsList.addEventListener("click", (event) => {
   const card = event.target.closest(".card");
   if (!card) return;
 
-  if (event.target.classList.contains("card__image")) {
+  if (event.target.classList.contains("card__delete")) {
+    card.remove();
+  } else if (event.target.classList.contains("card__image")) {
     const cardImage = card.querySelector(".card__image");
     const cardText = card.querySelector(".card__text");
     openModal(previewModal);
@@ -129,6 +131,8 @@ initialCards.forEach((item) => {
 });
 
 function getCardElement(data) {
+  console.log("Creating card for:", data.name);
+
   const cardElement = cardTemplate.content.cloneNode(true).querySelector(".card");
 
   const cardText = cardElement.querySelector(".card__text");
@@ -140,11 +144,13 @@ function getCardElement(data) {
   cardImage.alt = data.name;
 
   const likeButton = cardElement.querySelector(".card__like");
-
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like_liked");
   });
 
+  deleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
 
   return cardElement;
 }
