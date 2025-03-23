@@ -31,7 +31,9 @@ const nameInput = document.querySelector("#modal__input-name");
 const jobInput = document.querySelector("#modal__input-description");
 const editFormElement = document.querySelector(".modal__form");
 const profileNameElement = document.querySelector(".profile__name");
-const profileDescriptionElement = document.querySelector(".profile__description");
+const profileDescriptionElement = document.querySelector(
+  ".profile__description"
+);
 
 const profilePostButton = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
@@ -48,7 +50,7 @@ const modalCaption = previewModal.querySelector(".modal__caption");
 
 const closeButtons = document.querySelectorAll(".modal__button-close");
 
-closeButtons.forEach(button => {
+closeButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const modal = button.closest(".modal");
     if (modal) {
@@ -133,7 +135,9 @@ initialCards.forEach((item) => {
 function getCardElement(data) {
   console.log("Creating card for:", data.name);
 
-  const cardElement = cardTemplate.content.cloneNode(true).querySelector(".card");
+  const cardElement = cardTemplate.content
+    .cloneNode(true)
+    .querySelector(".card");
 
   const cardText = cardElement.querySelector(".card__text");
   const cardImage = cardElement.querySelector(".card__image");
